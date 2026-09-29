@@ -1,7 +1,7 @@
 import time
 
 def after_usage():
-    
+    print('okay! usage section finished')
 
 def main_program():
     print('welcome to the README generator! DO NOT answer these in full sentences!')
@@ -11,18 +11,19 @@ def main_program():
     print('okay! your summary is now: ' +summary)
     what_langs_they_used=input('please enter what languages you used to make this: ')
     print('okay! you used ' + what_langs_they_used + ' to make this project')
-    what_hackclub_program=input('please emter what hack club program you made this project for. if you did not make your project for a hack club program, respond to this with \'none\':')
+    what_hackclub_program=input('please enter what hack club program you made this project for. if you did not make your project for a hack club program, respond to this with \'none\':')
     if what_hackclub_program == 'none' or what_hackclub_program == 'None':
         print('okay! you didnt ship this for a hack club program.')
     else:
         print('okay! you shipped this to ' +what_hackclub_program)
-    demo_link=input('would you like to have a demo link?')
-    if demo_link == 'yes' or demo_link == 'Yes':
+    demo=input('would you like to have a demo link?')
+    if demo == 'yes' or demo == 'Yes':
         demo_link=input('please enter your demo link: ')
         if demo_link.startswith('https://') or demo_link.startswith('http://'):
             print('okay! your link is valid. ')
         else:
             print('invalid link. please provide https://')
+
     usage=input("do you want a 'usage' section?: ")
     if usage == 'yes' or usage == 'Yes':
         print('okay! usage is a bit more complicated. this time, you have steps that you need to use. you have maximum 10 steps, but you probably wont use them all. just type "done" in the step once you have done, and it will stop.')
@@ -55,18 +56,23 @@ def main_program():
     print('okay ' + name + ', im generating your README now! please wait...')
     print('\n\n')
 
-
-
     readme=('# ' +title)
     readme+=('\n')
+
     readme+=('## about')
     readme+=('i made ' +summary)
     readme+=('\n')
-    readme+=('## demo')
-    readme+=('this is the demo link: ' +demo_link)
+
+    if demo == 'yes' or demo == 'Yes':
+        readme+=('## demo')
+        readme+=('\n')
+        readme+=('this is the demo link: ' +demo_link)
+        readme+=('\n\n')
+
     readme+=('## what i made it with')
     readme+=('i used: ' +what_langs_they_used)
-    if what_hackclub_program != 'none' or what_hackclub_program != 'None':
+
+    if what_hackclub_program != 'none' and what_hackclub_program != 'None':
         readme+=("this was built for the hack club program '" + what_hackclub_program + "'")
     readme+=('built with <3 by ' +name)
     time.sleep(2)
