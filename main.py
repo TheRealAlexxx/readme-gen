@@ -30,8 +30,8 @@ def main_program():
             usage=input(str(usage_number) + '. ')
             if usage == 'done' or usage == 'Done':
                 break
+            usage_number+=1
         print('okay!')
-        usage_number += 1
 
     usage=input('would you like to add a usage section?: ')
     if usage == 'yes' or usage == 'Yes':
@@ -76,6 +76,7 @@ def main_program():
     readme+=('\n')
 
     readme+=('## about')
+    readme+=('\n')
     readme+=('i made ' +summary)
     readme+=('\n')
 
@@ -86,12 +87,16 @@ def main_program():
         readme+=('\n\n')
 
     readme+=('## what i made it with')
+    readme+=('\n')
     readme+=('i used: ' +what_langs_they_used)
+    readme+=('\n')
 
     if what_hackclub_program != 'none' and what_hackclub_program != 'None':
         readme+=("this was built for the hack club program '" + what_hackclub_program + "'")
+        readme+=('\n')
     readme+=('built with <3 by ' +name)
     time.sleep(2)
+    print('\n\n')
     print('okay ' + name + '! heres your README: \n\n')
     print(readme)
     time.sleep(2)
