@@ -31,7 +31,8 @@ def main_program():
             usage=input(str(usage_number) + '. ')
             if usage == 'done' or usage == 'Done':
                 break
-            usage_text+=str(usage_number) +'. '
+            usage_text+=str(usage_number) +'. ' +usage
+            usage_text+=('\n')
             usage_number+=1
         print('okay!')
         return usage_text
@@ -39,9 +40,10 @@ def main_program():
     usage=input('would you like to add a usage section?: ')
     if usage == 'yes' or usage == 'Yes':
         print('okay! add steps to how people need to use it. you have a maximum of 10 steps. reply to the step after the one that you have finished on with "done"')
-        usage_count()
+        usage_text=usage_count()
     else:
         print('okay! usage will not be a section in your readme.')
+        usage_text=''
 
 #   usage=input("would you like a usage section?: ')
 #   if usage == 'yes' or usage == 'Yes':
@@ -76,12 +78,12 @@ def main_program():
     print('\n\n')
 
     readme=('# ' +title)
-    readme+=('\n')
+    readme+=('\n\n')
 
     readme+=('## about')
     readme+=('\n')
     readme+=('i made ' +summary)
-    readme+=('\n')
+    readme+=('\n\n')
 
     if demo == 'yes' or demo == 'Yes':
         readme+=('## demo')
@@ -92,13 +94,13 @@ def main_program():
     readme+=('## what i made it with')
     readme+=('\n')
     readme+=('i used: ' +what_langs_they_used)
-    readme+=('\n')
+    readme+=('\n\n')
 
     if usage_text!='':
         readme+='## usage'
         readme+=('\n')
         readme+=(usage_text)
-        readme+=('\n')
+        readme+=('\n\n')
 
     if what_hackclub_program != 'none' and what_hackclub_program != 'None':
         readme+=("this was built for the hack club program '" + what_hackclub_program + "'")
