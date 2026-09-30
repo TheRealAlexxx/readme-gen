@@ -19,19 +19,22 @@ def main_program():
     demo=input('would you like to have a demo link?')
     if demo == 'yes' or demo == 'Yes':
         demo_link=input('please enter your demo link: ')
-        while not (demo_link.startswith('https://') or demo_link.startswith('https://')):
+        while not (demo_link.startswith('https://') or demo_link.startswith('http://')):
             print('invalid link. please provide https://')
             demo_link=input('please enter your demo link: ')
         print('okay! your link is valid')
 
     def usage_count():
         usage_number=1
+        usage_text=''
         while usage_number <= 10:
             usage=input(str(usage_number) + '. ')
             if usage == 'done' or usage == 'Done':
                 break
+            usage_text+=str(usage_number) +'. '
             usage_number+=1
         print('okay!')
+        return usage_text
 
     usage=input('would you like to add a usage section?: ')
     if usage == 'yes' or usage == 'Yes':
@@ -90,6 +93,12 @@ def main_program():
     readme+=('\n')
     readme+=('i used: ' +what_langs_they_used)
     readme+=('\n')
+
+    if usage_text!='':
+        readme+='## usage'
+        readme+=('\n')
+        readme+=(usage_text)
+        readme+=('\n')
 
     if what_hackclub_program != 'none' and what_hackclub_program != 'None':
         readme+=("this was built for the hack club program '" + what_hackclub_program + "'")
