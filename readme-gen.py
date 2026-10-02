@@ -5,24 +5,36 @@ def after_usage():
 
 def main_program():
     print('welcome to the README generator! DO NOT answer these in full sentences!')
+
     title=input('please enter your project name/title: ')
     print('okay! your title is now: ' +title )
+
     summary=input('now, please enter a small summary of your project. this should be only 1-2 sentences: ')
     print('okay! your summary is now: ' +summary)
+
     what_langs_they_used=input('please enter what languages you used to make this: ')
     print('okay! you used ' + what_langs_they_used + ' to make this project')
+
     what_hackclub_program=input('please enter what hack club program you made this project for. if you did not make your project for a hack club program, respond to this with \'none\':')
     if what_hackclub_program == 'none' or what_hackclub_program == 'None':
         print('okay! you didnt ship this for a hack club program.')
     else:
         print('okay! you shipped this to ' +what_hackclub_program)
-    demo=input('would you like to have a demo link?')
+    
+    demo=input('would you like to have a demo link?: ')
+    while demo != 'yes' and demo != 'Yes' and demo != 'no' and demo != 'No':
+        print('please enter yes or no')
+        demo=input('would you like to have a demo link?: ')
+
     if demo == 'yes' or demo == 'Yes':
         demo_link=input('please enter your demo link: ')
         while not (demo_link.startswith('https://') or demo_link.startswith('http://')):
-            print('invalid link. please provide https://')
+            print('invalid link. please provide https:// or http://')
             demo_link=input('please enter your demo link: ')
         print('okay! your link is valid')
+
+    elif demo == 'no' or demo == 'No':
+        print('okay! no demo section.')
 
     def usage_count():
         usage_number=1
@@ -44,7 +56,13 @@ def main_program():
     else:
         print('okay! usage will not be a section in your readme.')
         usage_text=''
-        
+
+    features=input('would you like to add a features section?: ')
+    while features != 'yes' and features != 'Yes' and features != 'no' and features != 'No':
+        print('please enter yes or no')
+        features=input('would you like to add a features section?: ')
+
+    if features ==
 
     name=input('finally, please enter your name: ')
     print('okay ' + name + ', im generating your README now! please wait...')
