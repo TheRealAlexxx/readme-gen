@@ -44,33 +44,6 @@ def main_program():
     else:
         print('okay! usage will not be a section in your readme.')
         usage_text=''
-
-#   usage=input("would you like a usage section?: ')
-#   if usage == 'yes' or usage == 'Yes':
-#     print('okay! usage is a bit more complicated. this time, you have steps that you need to use. you have maximum 10 steps, but you probably wont use them all. just type "done" in the step once you have done, and it will stop.')
-#       time.sleep(2)
-#       usage1=input('1. ')
-#       print('okay! the first step is: ' +usage1)
-#       if usage1 == 'done' or usage1 == 'Done':
-#           after_usage()
-#       usage2=input('2. ')
-#       print('okay! the second step is: ' +usage2)
-#       usage3=input('3. ')
-#       print('okay! the third step is: ' +usage3)
-#       usage4=input('4. ')
-#       print('okay! the fourth step is: ' +usage4)
-#       usage5=input('5. ')
-#       print('okay! the fith step is: ' +usage5)
-#       usage6=input('6. ')
-#       print('okay! the sixth step is: ' +usage6)
-#       usage7=input('7. ')
-#       print('okay! the seventh step is: ' +usage7)
-#       usage8=input('8. ')
-#       print('okay! the eighth step is: ' +usage8)
-#       usage9=input('9. ')
-#       print('okay! the ninth step is: ' +usage9)
-#       usage10=input('10. (this is your final step)')
-#       print('okay! the tenth step is: ' +usage10)
         
 
     name=input('finally, please enter your name: ')
